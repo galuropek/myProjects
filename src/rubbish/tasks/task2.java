@@ -1,4 +1,4 @@
-package projects.tasks;
+package rubbish.tasks;
 
 //найти единственный дубликат в массиве от 1 до 100
 

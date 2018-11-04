@@ -1,4 +1,4 @@
-package projects.tmp.jd01_06;
+package rubbish.tmp.jd01_06;
 
 class Poem {
     static final String text=

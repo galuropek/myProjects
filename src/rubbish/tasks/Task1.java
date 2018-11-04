@@ -1,4 +1,4 @@
-package projects.tasks;
+package rubbish.tasks;
 
 import java.util.LinkedList;
 import java.util.List;

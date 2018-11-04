@@ -1,4 +1,4 @@
-package projects.tmp.jd01_06;
+package rubbish.tmp.jd01_06;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

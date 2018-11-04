@@ -1,4 +1,4 @@
-package projects.tasks;
+package rubbish.tasks;
 
 public class Task4BubbleSort {
     public static void main(String[] args) {

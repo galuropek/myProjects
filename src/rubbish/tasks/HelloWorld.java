@@ -1,4 +1,4 @@
-package projects.tasks;
+package rubbish.tasks;
 
 import javax.swing.JOptionPane;
 
