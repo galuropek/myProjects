@@ -20,12 +20,12 @@ public class UsingArrayApplication160 {
         }
         int[] binoms = new int[n + 1];
         binoms[0] = 1;
-        String txt = "Содержимое массива: \n" + binoms[0] + "|";
+        StringBuilder txt = new StringBuilder("Содержимое массива: \n|" + binoms[0] + "|");
         for (int i = 1; i < binoms.length; i++) {
             binoms[i] = binoms[i - 1] * (n - i + 1) / i;
-            txt += " " + binoms[i] + "|";
-            JOptionPane.showMessageDialog(null, txt, title, JOptionPane.INFORMATION_MESSAGE);
+            txt.append(" ").append(binoms[i]).append("|");
         }
+        JOptionPane.showMessageDialog(null, txt.toString(), title, JOptionPane.INFORMATION_MESSAGE);
 
     }
 }
