@@ -2,7 +2,7 @@ package rubbish.practiceBook;
 
 import javax.swing.*;
 
-public class UsingListApplication {
+public class UsingListApplication165 {
 
     public static void main(String[] args) {
         String[] txt = {"Волк", "Лиса", "Медведь", "Енот"};
