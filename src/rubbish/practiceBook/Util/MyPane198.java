@@ -4,7 +4,6 @@ import javax.swing.*;
 
 public class MyPane198 extends JOptionPane {
     public static void showMessage(String txt, String title) {
-        //можно добавить картинку, добавив после PLAIN_MESSAGE (new ImageIcon("dir файла"))
         showMessageDialog(null, txt, title, PLAIN_MESSAGE);
     }
 
