@@ -1,4 +1,4 @@
-package rubbish.practiceBook.Util;
+package practice.practiceBook.Util;
 
 import javax.swing.*;
 

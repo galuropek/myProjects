@@ -1,4 +1,4 @@
-package rubbish.tasks;
+package practice.tasks;
 
 import java.util.LinkedList;
 import java.util.List;

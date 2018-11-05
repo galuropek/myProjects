@@ -1,6 +1,6 @@
-package rubbish.practiceBook;
+package practice.practiceBook;
 
-import rubbish.practiceBook.Util.MyPane198;
+import practice.practiceBook.Util.MyPane198;
 
 public class ExtendingJOptionPaneApplication198 {
 

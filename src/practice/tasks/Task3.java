@@ -1,4 +1,4 @@
-package rubbish.tasks;
+package practice.tasks;
 
 //распечатать слово задом на перед
 
@@ -9,11 +9,11 @@ public class Task3 {
     }
 
     private static String reverseWord(String word) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         char[] array = word.toCharArray();
         for (int i = array.length - 1; i >= 0; i--) {
-            result += array[i];
+            result.append(array[i]);
         }
-        return result;
+        return result.toString();
     }
 }

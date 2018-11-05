@@ -1,4 +1,4 @@
-package rubbish.practiceBook;
+package practice.practiceBook;
 
 public class Show2DArrayApplication183 {
 

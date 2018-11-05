@@ -1,4 +1,4 @@
-package rubbish.tmp.jd01_06;
+package practice.tmp.jd01_06;
 
 /**
  * Created by user on 9/1/2018.
