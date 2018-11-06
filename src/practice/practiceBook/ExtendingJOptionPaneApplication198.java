@@ -1,6 +1,6 @@
 package practice.practiceBook;
 
-import practice.practiceBook.Util.MyPane198;
+import practice.practiceBook.util.MyPane198;
 
 public class ExtendingJOptionPaneApplication198 {
 

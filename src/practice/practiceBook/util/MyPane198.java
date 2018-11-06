@@ -1,4 +1,4 @@
-package practice.practiceBook.Util;
+package practice.practiceBook.util;
 
 import javax.swing.*;
 
