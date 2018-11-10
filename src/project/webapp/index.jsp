@@ -5,6 +5,24 @@
 <body>
     <div class="container">
         <%@ include file="include/menu.htm" %>
+
+        <form action="do?command=Index" method="post">
+            <div class="row justify-content-end">
+                <div class="col-2">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Language:</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>English</option>
+                            <option>Русский</option>
+                        </select>
+                        <div class="float-right">
+                        <button type="submit" class="btn btn-outline-dark">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
         <h1 class="text-center">Welcome to the car rental website!</h1>
 
         <div class="row">
