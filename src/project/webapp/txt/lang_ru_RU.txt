@@ -1,0 +1,8 @@
+navbar.home=Домашняя
+navbar.reset=Сбросить данные БД
+navbar.carsList=Список машин
+navbar.newOrder=Оформить заказ
+navbar.addNewCar=Добавить автомобиль
+navbar.login=Авторизоваться
+navbar.registration=Зарегистрироваться
+navbar.profile=Профиль
