@@ -1,6 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<html>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${language}" />
+<fmt:setBundle basename="src.project.webapp.res.lang" />
+<html lang="${language}">
 <%@ include file="include/head.htm" %>
 <body>
     <div class="container">
@@ -10,14 +14,10 @@
             <div class="row justify-content-end">
                 <div class="col-2">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect2">Language:</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>English</option>
-                            <option>Русский</option>
+                        <select class="form-control" id="language" name="language" onchange="submit()">
+                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
+                            <option value="ru" ${language == 'ru' ? 'selected' : ''}>Русский</option>
                         </select>
-                        <div class="float-right">
-                        <button type="submit" class="btn btn-outline-dark">Apply</button>
-                        </div>
                     </div>
                 </div>
             </div>
