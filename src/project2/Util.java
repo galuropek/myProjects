@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 class Util {
 
     static boolean isItQuestion(String message) {
-        Pattern pattern = Pattern.compile("[А-я]+\\s?\\?");
+        Pattern pattern = Pattern.compile("\\?");
         Matcher matcher = pattern.matcher(message);
-        return matcher.matches();
+        return matcher.find();
     }
 }
