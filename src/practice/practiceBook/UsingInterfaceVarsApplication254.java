@@ -40,7 +40,7 @@ public class UsingInterfaceVarsApplication254 {
     public static void main(String[] args) {
 
         Base ref;
-        ref=new Alpha254("text");
+        ref = new Alpha254("text");
         ref.show();
         ref = new Bravo254(123);
         ref.show();
