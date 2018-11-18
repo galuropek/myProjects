@@ -10,7 +10,7 @@ public class Runner {
         Scanner scanner = new Scanner(System.in);
         String inputLine;
         while (!(inputLine = scanner.nextLine()).equalsIgnoreCase("пока")) {
-            Message.createMessage(inputLine);
+            Message.createMessage(inputLine).reaction();
         }
     }
 }

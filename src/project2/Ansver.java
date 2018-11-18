@@ -1,6 +1,6 @@
 package project2;
 
-public class Question extends Message{
+public class Ansver extends Message {
 
     private String value;
 
@@ -8,13 +8,13 @@ public class Question extends Message{
         return value;
     }
 
-    Question(String value) {
-        super("question");
+    public Ansver(String value) {
+        super("Ansver");
         this.value = value;
     }
 
     @Override
     public void reaction() {
-        System.out.println("Это вопрос");
+        super.reaction();
     }
 }

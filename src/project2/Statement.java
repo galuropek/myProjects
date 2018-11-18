@@ -9,8 +9,8 @@ public class Statement extends Message{
     }
 
     Statement(String value) {
+        super("statement");
         this.value = value;
-        reaction();
     }
 
     @Override
