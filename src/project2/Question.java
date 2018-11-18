@@ -8,8 +8,9 @@ public class Question extends Message{
         return value;
     }
 
-    public Question(String value) {
+    Question(String value) {
         this.value = value;
+        reaction();
     }
 
     @Override

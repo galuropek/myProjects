@@ -8,8 +8,9 @@ public class Statement extends Message{
         return value;
     }
 
-    public Statement(String value) {
+    Statement(String value) {
         this.value = value;
+        reaction();
     }
 
     @Override
