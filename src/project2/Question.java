@@ -15,6 +15,7 @@ public class Question extends Message{
 
     @Override
     public void reaction() {
-        System.out.println("Это вопрос");
+        String s = Util.parseMessage(this);
+        System.out.println(s);
     }
 }
