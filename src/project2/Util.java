@@ -24,17 +24,34 @@ class Util {
             file = "ansver_question.txt";
         }
         String txt = getTxt(file, path);
-        String[] split = txt.split("=");
+        String replace = txt.replace('=', '\n');
+        String[] split = replace.split("\n");
+
+        //============test split
+//        for (String s : split) {
+//            System.out.println(s);
+//        }
+        //============
+
+        //============problem place
         Map<String, String> map = new HashMap<>();
-        for (int i = 0; i < split.length; i++) {
+        for (int i = 0; i < split.length - 1; i++) {
             map.put(split[i], split[i + 1]);
             i++;
         }
+        System.out.println(map);
+        //============
+
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
         String ansver = "default";
+        String value = message.getValue();
+        Pattern pattern;
+        Matcher matcher;
         while (iterator.hasNext()) {
             String key = iterator.next().getKey();
-            if (message.equals(key)) {
+            pattern = Pattern.compile(key);
+            matcher = pattern.matcher(value);
+            if (matcher.find()) {
                 ansver = map.get(key);
                 break;
             }
@@ -43,18 +60,18 @@ class Util {
     }
 
     private static String getTxt(String file, String path) {
-        String txt = "";
+        StringBuilder txt = new StringBuilder();
         try (BufferedReader reader =
                      new BufferedReader(
                              new FileReader(path.concat(file)))
         ) {
             while (reader.ready()) {
-                txt = reader.readLine();
+                txt.append(reader.readLine()).append("\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return txt;
+        return txt.toString();
     }
 
     private static String getDirectory(Class<?> clss) {

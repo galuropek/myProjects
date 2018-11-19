@@ -4,12 +4,19 @@ abstract class Message implements Reaction {
 
     private String name;
 
+    private String value;
+
     public String getName() {
         return name;
     }
 
-    Message(String name) {
+    public String getValue() {
+        return value;
+    }
+
+    Message(String name, String value) {
         this.name = name;
+        this.value = value;
     }
 
     static Message createMessage(String message) {
