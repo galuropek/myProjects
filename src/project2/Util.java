@@ -39,12 +39,11 @@ class Util {
             map.put(split[i], split[i + 1]);
             i++;
         }
-        System.out.println(map);
         //============
 
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
-        String ansver = "default";
-        String value = message.getValue();
+        String ansver = "пока нет реакции =(";
+        String value = message.getValue().toLowerCase();
         Pattern pattern;
         Matcher matcher;
         while (iterator.hasNext()) {

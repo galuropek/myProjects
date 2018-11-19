@@ -8,7 +8,7 @@ public class Question extends Message{
 
     @Override
     public void reaction() {
-        String s = Util.parseMessage(this);
-        System.out.println(s);
+        String avsver = Util.parseMessage(this);
+        System.out.println(avsver);
     }
 }
