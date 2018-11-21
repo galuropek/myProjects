@@ -21,8 +21,7 @@ public class AvgLinkedList {
     private static int getElementStartForEnd(int indexElement, LinkedList<Integer> list) {
 
         int listSize = list.size();
-        int index = listSize - indexElement;
-        return list.get(index);
+        return list.get(listSize - indexElement);
     }
 
     public static void main(String[] args) {
