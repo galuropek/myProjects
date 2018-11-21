@@ -19,7 +19,6 @@ public class ArrayDuble {
             System.out.println(array[i]);
         }
         int sumArray = sumArrayElements(array);
-
-
+        System.out.println(sumArray);
     }
 }
