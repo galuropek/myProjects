@@ -18,6 +18,13 @@ public class AvgLinkedList {
         return list.get(mean);
     }
 
+    private static int getElementStartForEnd(int indexElement, LinkedList<Integer> list) {
+
+        int listSize = list.size();
+        int index = listSize - indexElement;
+        return list.get(index);
+    }
+
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < 11; i++) {
@@ -25,5 +32,8 @@ public class AvgLinkedList {
         }
         System.out.println(list);
         System.out.println(getAverageLinkedList(list));
+        System.out.println(getElementStartForEnd(3, list));
     }
+
+
 }
