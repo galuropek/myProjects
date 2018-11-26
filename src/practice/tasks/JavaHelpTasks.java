@@ -2,6 +2,8 @@ package practice.tasks;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class JavaHelpTasks {
 
@@ -33,8 +35,15 @@ public class JavaHelpTasks {
         String letter = String.valueOf(randomLetterForGame());
         String input;
         int counter = 0;
-        while (!(input = scanner.nextLine()).equals(letter)) {
+        while (!(input = scanner.nextLine()).equalsIgnoreCase("end")) {
             counter++;
+            if (!testOnChar(input)) {
+                System.out.println("Incorrect expression: " + input + ".\n" +
+                        "Enter only A-Z letter!\n" +
+                        "Try again:");
+            } else if (findMatch(input, letter)) {
+                break;
+            }
         }
         System.out.println("Congratulations, you guessed it in " + counter + " steps.");
         //==================================
@@ -65,6 +74,34 @@ public class JavaHelpTasks {
         int num = (int) (Math.random() * 26);
         return (char) (letter + num);
     }
+
+    private static boolean testOnChar(String input) {
+        char[] chars = input.trim().toUpperCase().toCharArray();
+        char[] alphabet = new char[26];
+        char letter = 'A';
+        for (int i = 0; i < alphabet.length; i++) {
+            alphabet[i] = (char) (letter + i);
+            if (chars[0] == alphabet[i])
+                return true;
+        }
+        return false;
+    }
+
+    private static boolean findMatch(String input, String letter) {
+        char[] inputChars = input.trim().toUpperCase().toCharArray();
+        char[] pickChars = letter.trim().toUpperCase().toCharArray();
+        char inputChar = inputChars[0];
+        char pickChar = pickChars[0];
+        if (inputChar == pickChar) {
+            return true;
+        } else if (inputChar > pickChar) {
+            System.out.println("You’re too high.");
+        } else {
+            System.out.println("You’re too low.");
+        }
+        return false;
+    }
+
 
     //print any arrays
     private static void printArray(double[] array) {
