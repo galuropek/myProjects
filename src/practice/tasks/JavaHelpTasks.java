@@ -12,12 +12,16 @@ public class JavaHelpTasks {
         //==================================
 
         //=========task4====================
-        String text = "Смотри, какие лапки грязные, — бяка! " +
-                "Ну конечно, этот нехороший стульчик, это он, бяка, " +
-                "сделал Вовочке бо-бо! Существуют, видите ли, такие " +
-                "законодательные понятия, как аффилированность, " +
-                "крупные, заинтересованные сделки, — словом, всякая бяка.";
-        censure(text);
+//        String text = "Смотри, какие лапки грязные, — бяка! " +
+//                "Ну конечно, этот нехороший стульчик, это он, бяка, " +
+//                "сделал Вовочке бо-бо! Существуют, видите ли, такие " +
+//                "законодательные понятия, как аффилированность, " +
+//                "крупные, заинтересованные сделки, — словом, всякая бяка.";
+//        censure(text);
+        //==================================
+
+        //=========task5====================
+        distanceToLightningStrike(7.2);
         //==================================
     }
 
@@ -34,6 +38,14 @@ public class JavaHelpTasks {
         String result = text.replaceAll("бяка", "[ВЫРЕЗАНО ЦЕНЗУРОЙ]");
         System.out.println(result);
     }
+
+    //task 5
+    private static void distanceToLightningStrike(double interval) {
+        System.out.println("Distance to lightning strike: " + interval * 1100 + " pounds.");
+    }
+
+    //task 6
+
 
     //print any arrays
     private static void printArray(double[] array) {
