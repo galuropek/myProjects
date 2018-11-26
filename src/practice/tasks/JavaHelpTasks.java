@@ -45,7 +45,10 @@ public class JavaHelpTasks {
                 break;
             }
         }
-        System.out.println("Congratulations, you guessed it in " + counter + " steps.");
+        if (input.equalsIgnoreCase("end"))
+            System.out.println("Thank you for game!\nLucky next time!");
+        else
+            System.out.println("Congratulations, you guessed it in " + counter + " steps.");
         //==================================
     }
 
@@ -68,7 +71,7 @@ public class JavaHelpTasks {
         System.out.println("Distance to lightning strike: " + interval * 1100 + " pounds.");
     }
 
-    //task 6
+    //====================task 6 start===============================
     private static char randomLetterForGame() {
         char letter = 'A';
         int num = (int) (Math.random() * 26);
@@ -101,7 +104,7 @@ public class JavaHelpTasks {
         }
         return false;
     }
-
+    //====================task 6 end=================================
 
     //print any arrays
     private static void printArray(double[] array) {
