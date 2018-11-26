@@ -1,11 +1,13 @@
 package practice.tasks;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class JavaHelpTasks {
 
     //java-help.ru tasks
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         //=========task3====================
 //        double[] array = {1, 2, 3, 4, 7, 8, 9, 5, 1};
 //        increaseElementInsideArray(array, 2, 10);
@@ -21,7 +23,20 @@ public class JavaHelpTasks {
         //==================================
 
         //=========task5====================
-        distanceToLightningStrike(7.2);
+//        distanceToLightningStrike(7.2);
+        //==================================
+
+        //=========task6====================
+        System.out.println("Welcome to the simple game!\n" +
+                "Guess the letter in fewer steps.\n" +
+                "What letter did the computer pick?");
+        String letter = String.valueOf(randomLetterForGame());
+        String input;
+        int counter = 0;
+        while (!(input = scanner.nextLine()).equals(letter)) {
+            counter++;
+        }
+        System.out.println("Congratulations, you guessed it in " + counter + " steps.");
         //==================================
     }
 
@@ -45,7 +60,11 @@ public class JavaHelpTasks {
     }
 
     //task 6
-
+    private static char randomLetterForGame() {
+        char letter = 'A';
+        int num = (int) (Math.random() * 26);
+        return (char) (letter + num);
+    }
 
     //print any arrays
     private static void printArray(double[] array) {
