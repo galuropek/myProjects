@@ -2,6 +2,6 @@ package practice.gerbageRecycler;
 
 public interface gerbageInterface {
 
-    void collectGerbage();
-    void giveGerbage();
+    void collectGarbage();
+    void giveGarbage();
 }
