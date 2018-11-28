@@ -1,8 +1,8 @@
 package practice.gerbageRecycler;
 
-public class Collector {
+class Collector {
 
-    void takeGarbage(Employee employee) {
+    static void takeGarbage(Employee employee) {
         if (employee instanceof Human) {
             if (Util.testForGrbage()) {
                 System.out.println("All garbage is taken.");
