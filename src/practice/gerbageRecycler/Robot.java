@@ -2,8 +2,8 @@ package practice.gerbageRecycler;
 
 public class Robot extends Employee{
 
-    public Robot(String who) {
-        super(who);
+    Robot() {
+        super("Robot");
     }
 
     @Override
