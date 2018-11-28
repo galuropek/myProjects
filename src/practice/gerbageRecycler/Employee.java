@@ -1,6 +1,6 @@
 package practice.gerbageRecycler;
 
-public abstract class Employee implements gerbageInterface {
+public abstract class Employee implements GarbageInterface {
 
     private String who;
 
