@@ -8,11 +8,11 @@ public class Human extends Employee{
 
     @Override
     public void collectGarbage() {
-        System.out.println(super.getWho() + " collected garbage.");
+        System.out.println("Human collected garbage.");
     }
 
     @Override
     public void giveGarbage() {
-        System.out.println(super.getWho() + " gives away garbage.");
+        System.out.println("Human gives away garbage.");
     }
 }
