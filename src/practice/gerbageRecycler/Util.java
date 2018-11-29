@@ -22,6 +22,10 @@ public class Util {
         return null;
     }
 
+    static void print(String text) {
+        System.out.println(text);
+    }
+
     private static int generateEmployeeClass() {
         return (int) (Math.random() * 3 + 1);
     }

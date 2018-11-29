@@ -1,5 +1,7 @@
 package practice.gerbageRecycler;
 
+import static practice.gerbageRecycler.Collector.takeGarbage;
+
 public class Runner {
 
     public static void main(String[] args) {
@@ -24,7 +26,8 @@ public class Runner {
             System.out.println(employee.getWho());
             employee.collectGarbage();
             employee.giveGarbage();
-            Collector.takeGarbage(employee);
+            String response = Collector.takeGarbage(employee);
+            Util.print(response);
             System.out.println("===================next=======================");
         }
     }
