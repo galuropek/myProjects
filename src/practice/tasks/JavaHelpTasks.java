@@ -1,7 +1,6 @@
 package practice.tasks;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,7 +51,16 @@ public class JavaHelpTasks {
         //==================================
 
         //=========task9====================
-        System.out.println(backwardsWord("привет"));
+//        System.out.println(backwardsWord("привет"));
+        //==================================
+
+        //=========task9====================
+        String[] names = {"Elena", "Thomas", "Hamilton", "Suzie",
+                "Phil", "Matt", "Alex", "Emma", "John", "James",
+                "Jane", "Emily", "Daniel", "Neda", "Aaron", "Kate"};
+        int[] times = { 341, 273, 278, 329, 445, 402, 388, 275, 243,
+                334, 412, 393, 299, 343, 317, 265 };
+        findFasterRunner(names, times);
         //==================================
     }
 
@@ -121,9 +129,20 @@ public class JavaHelpTasks {
         char[] chars = text.toCharArray();
         if (indexEnd >= 0) {
             sb.append(chars[indexEnd]);
-            backwardsWord(indexEnd-1, text);
+            backwardsWord(indexEnd - 1, text);
         }
         return sb.toString();
+    }
+    //===============================================================
+
+    //====================task 10====================================
+    private static void findFasterRunner(String[] names, int[] times) {
+        TreeMap<Integer, String> result = new TreeMap<>();
+        for (int i = 0; i < times.length; i++) {
+            result.put(times[i], names[i]);
+        }
+        int fasterTime = result.size()-1;
+        System.out.println(result.firstEntry());
     }
     //===============================================================
 
