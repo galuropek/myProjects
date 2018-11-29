@@ -29,26 +29,30 @@ public class JavaHelpTasks {
         //==================================
 
         //=========task6====================
-        System.out.println("Welcome to the simple game!\n" +
-                "Guess the letter in fewer steps.\n" +
-                "What letter did the computer pick?");
-        String letter = String.valueOf(randomLetterForGame());
-        String input;
-        int counter = 0;
-        while (!(input = scanner.nextLine()).equalsIgnoreCase("end")) {
-            counter++;
-            if (!testOnChar(input)) {
-                System.out.println("Incorrect expression: " + input + ".\n" +
-                        "Enter only A-Z letter!\n" +
-                        "Try again:");
-            } else if (findMatch(input, letter)) {
-                break;
-            }
-        }
-        if (input.equalsIgnoreCase("end"))
-            System.out.println("Thank you for game!\nLucky next time!");
-        else
-            System.out.println("Congratulations, you guessed it in " + counter + " steps.");
+//        System.out.println("Welcome to the simple game!\n" +
+//                "Guess the letter in fewer steps.\n" +
+//                "What letter did the computer pick?");
+//        String letter = String.valueOf(randomLetterForGame());
+//        String input;
+//        int counter = 0;
+//        while (!(input = scanner.nextLine()).equalsIgnoreCase("end")) {
+//            counter++;
+//            if (!testOnChar(input)) {
+//                System.out.println("Incorrect expression: " + input + ".\n" +
+//                        "Enter only A-Z letter!\n" +
+//                        "Try again:");
+//            } else if (findMatch(input, letter)) {
+//                break;
+//            }
+//        }
+//        if (input.equalsIgnoreCase("end"))
+//            System.out.println("Thank you for game!\nLucky next time!");
+//        else
+//            System.out.println("Congratulations, you guessed it in " + counter + " steps.");
+        //==================================
+
+        //=========task9====================
+        System.out.println(backwardsWord("привет"));
         //==================================
     }
 
@@ -105,6 +109,23 @@ public class JavaHelpTasks {
         return false;
     }
     //====================task 6 end=================================
+
+    //====================task 9=====================================
+    private static StringBuilder sb = new StringBuilder();
+
+    private static String backwardsWord(String text) {
+        return backwardsWord(text.length() - 1, text);
+    }
+
+    private static String backwardsWord(int indexEnd, String text) {
+        char[] chars = text.toCharArray();
+        if (indexEnd >= 0) {
+            sb.append(chars[indexEnd]);
+            backwardsWord(indexEnd-1, text);
+        }
+        return sb.toString();
+    }
+    //===============================================================
 
     //print any arrays
     private static void printArray(double[] array) {
