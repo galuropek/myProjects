@@ -18,7 +18,10 @@ public class JavaHelpTasks2 {
 //        System.out.println(Util.printMatrix(ints1));
         //=========================================================
         //====================task 2.3=============================
-        getName();
+//        getName();
+        //=========================================================
+        //====================task 2.4=============================
+        salaryForWeek(10, 50);
         //=========================================================
     }
 
@@ -39,13 +42,32 @@ public class JavaHelpTasks2 {
         }
         return result;
     }
+
     //=========================================================
     //====================decision 2.3=========================
-    private static void getName(){
-        Scanner scanner=new Scanner(System.in);
+    private static void getName() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Hello! What is your name?");
         System.out.println("Your name is "
                 + scanner.nextLine());
+    }
+
+    //=========================================================
+    //====================decision 2.4=========================
+    private static void salaryForWeek(double salaryForHour, double hours) {
+        double salary;
+        if (hours > 40 && hours <= 60 && salaryForHour >= 8) {
+            salary = salaryForHour * 40 + (hours - 40) * 1.5;
+            System.out.println(salary);
+        } else if (hours <= 40 && salaryForHour >= 8) {
+            salary = salaryForHour * hours;
+            System.out.println(salary);
+        } else {
+            if (hours < 8)
+                System.out.println("Employee can not have salary less than 8 dollars per hour");
+            else
+                System.out.println("Employee can not working more than 60 hours a week");
+        }
     }
     //=========================================================
 }
