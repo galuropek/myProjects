@@ -1,6 +1,7 @@
 package practice.tasks;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class JavaHelpTasks2 {
 
@@ -11,10 +12,13 @@ public class JavaHelpTasks2 {
 //        System.out.println(isInteger(number));
         //=========================================================
         //====================task 2.1=============================
-        int[][] ints = Util.generateMatrix(3, 3);
-        System.out.println(Util.printMatrix(ints));
-        int[][] ints1 = resetColumn(ints, 1);
-        System.out.println(Util.printMatrix(ints1));
+//        int[][] ints = Util.generateMatrix(3, 3);
+//        System.out.println(Util.printMatrix(ints));
+//        int[][] ints1 = resetColumn(ints, 1);
+//        System.out.println(Util.printMatrix(ints1));
+        //=========================================================
+        //====================task 2.3=============================
+        getName();
         //=========================================================
     }
 
@@ -34,6 +38,14 @@ public class JavaHelpTasks2 {
             }
         }
         return result;
+    }
+    //=========================================================
+    //====================decision 2.3=========================
+    private static void getName(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Hello! What is your name?");
+        System.out.println("Your name is "
+                + scanner.nextLine());
     }
     //=========================================================
 }
