@@ -21,7 +21,13 @@ public class JavaHelpTasks2 {
 //        getName();
         //=========================================================
         //====================task 2.4=============================
-        salaryForWeek(10, 50);
+//        salaryForWeek(10, 50);
+        //=========================================================
+        //====================task 2.5=============================
+        isItPalindrome(321654);
+        isItPalindrome(123321);
+        isItPalindrome(465909564);
+        isItPalindrome(975345345);
         //=========================================================
     }
 
@@ -68,6 +74,21 @@ public class JavaHelpTasks2 {
             else
                 System.out.println("Employee can not working more than 60 hours a week");
         }
+    }
+
+    //=========================================================
+    //====================decision 2.5=========================
+    private static void isItPalindrome(int number) {
+        char[] chars = String.valueOf(number).toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for (int i = chars.length - 1; i >= 0; i--) {
+            sb.append(chars[i]);
+        }
+        int inversion = Integer.valueOf(sb.toString());
+        if (inversion == number)
+            System.out.println(number + " - is Palindrome =)");
+        else
+            System.out.println(number + " - is not Palindrome =(");
     }
     //=========================================================
 }
