@@ -24,10 +24,13 @@ public class JavaHelpTasks2 {
 //        salaryForWeek(10, 50);
         //=========================================================
         //====================task 2.5=============================
-        isItPalindrome(321654);
-        isItPalindrome(123321);
-        isItPalindrome(465909564);
-        isItPalindrome(975345345);
+//        isItPalindrome(321654);
+//        isItPalindrome(123321);
+//        isItPalindrome(465909564);
+//        isItPalindrome(975345345);
+        //=========================================================
+        //====================task 2.6=============================
+        multiplicationTable(4);
         //=========================================================
     }
 
@@ -78,17 +81,24 @@ public class JavaHelpTasks2 {
 
     //=========================================================
     //====================decision 2.5=========================
-    private static void isItPalindrome(int number) {
-        char[] chars = String.valueOf(number).toCharArray();
-        StringBuilder sb = new StringBuilder();
-        for (int i = chars.length - 1; i >= 0; i--) {
-            sb.append(chars[i]);
+//    private static void isItPalindrome(int number) {
+//        char[] chars = String.valueOf(number).toCharArray();
+//        StringBuilder sb = new StringBuilder();
+//        for (int i = chars.length - 1; i >= 0; i--) {
+//            sb.append(chars[i]);
+//        }
+//        int inversion = Integer.valueOf(sb.toString());
+//        if (inversion == number)
+//            System.out.println(number + " - is Palindrome =)");
+//        else
+//            System.out.println(number + " - is not Palindrome =(");
+//    }
+    //=========================================================
+    //====================decision 2.6=========================
+    private static void multiplicationTable(int number) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%2d * %2d = %2d\n", number, i, i * number);
         }
-        int inversion = Integer.valueOf(sb.toString());
-        if (inversion == number)
-            System.out.println(number + " - is Palindrome =)");
-        else
-            System.out.println(number + " - is not Palindrome =(");
     }
     //=========================================================
 }
