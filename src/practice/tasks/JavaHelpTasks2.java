@@ -1,6 +1,8 @@
 package practice.tasks;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class JavaHelpTasks2 {
@@ -30,7 +32,13 @@ public class JavaHelpTasks2 {
 //        isItPalindrome(975345345);
         //=========================================================
         //====================task 2.6=============================
-        multiplicationTable(4);
+//        multiplicationTable(4);
+        //=========================================================
+        //====================task 2.7=============================
+        int[][] matrix = {{12, 30, 51, 23, 16}, {65, 14, 40, 32, 28},
+                {59, 38, 25, 42, 39}, {10, 44, 29, 19, 72}};
+
+        matrixToArray(matrix);
         //=========================================================
     }
 
@@ -81,23 +89,38 @@ public class JavaHelpTasks2 {
 
     //=========================================================
     //====================decision 2.5=========================
-//    private static void isItPalindrome(int number) {
-//        char[] chars = String.valueOf(number).toCharArray();
-//        StringBuilder sb = new StringBuilder();
-//        for (int i = chars.length - 1; i >= 0; i--) {
-//            sb.append(chars[i]);
-//        }
-//        int inversion = Integer.valueOf(sb.toString());
-//        if (inversion == number)
-//            System.out.println(number + " - is Palindrome =)");
-//        else
-//            System.out.println(number + " - is not Palindrome =(");
-//    }
+    private static void isItPalindrome(int number) {
+        char[] chars = String.valueOf(number).toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for (int i = chars.length - 1; i >= 0; i--) {
+            sb.append(chars[i]);
+        }
+        int inversion = Integer.valueOf(sb.toString());
+        if (inversion == number)
+            System.out.println(number + " - is Palindrome =)");
+        else
+            System.out.println(number + " - is not Palindrome =(");
+    }
+
     //=========================================================
     //====================decision 2.6=========================
     private static void multiplicationTable(int number) {
         for (int i = 1; i <= 10; i++) {
             System.out.printf("%2d * %2d = %2d\n", number, i, i * number);
+        }
+    }
+
+    //=========================================================
+    //====================decision 2.7=========================
+    private static void matrixToArray(int[][] matrix) {
+        List<Integer> list = new ArrayList();
+        System.out.print("|");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+//                if need return array:
+//                list.add(matrix[i][j]);
+                System.out.printf("%2d|", matrix[i][j]);
+            }
         }
     }
     //=========================================================
