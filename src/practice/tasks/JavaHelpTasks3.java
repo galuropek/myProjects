@@ -14,7 +14,7 @@ public class JavaHelpTasks3 {
 //        System.out.println(integerToArray(523));
         //==========================================================
         //========================3.2.==============================
-        bigPrintNumber(101001);
+        bigPrintNumber(2354091);
         //==========================================================
     }
 
@@ -39,11 +39,22 @@ public class JavaHelpTasks3 {
     private static void bigPrintNumber(int number) {
         List<Integer> integers = integerToArray(number);
         int sizeList = integers.size();
+        String[][] bigPrintNumbers = new String[sizeList][9];
+        Iterator<Integer> iterator = integers.iterator();
+        int counter = 0;
+        while (iterator.hasNext()) {
+            Integer next = iterator.next();
+            for (int i = 0; i < 9; i++) {
+                bigPrintNumbers[counter][i] = BigPrintNambers.numbers[next][i];
+            }
+            counter++;
+        }
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < sizeList; j++) {
-                System.out.println(BigPrintNambers.numbers[i][j]);
+                System.out.print(bigPrintNumbers[j][i] + "  ");
             }
+            System.out.println();
         }
-
     }
+
 }
