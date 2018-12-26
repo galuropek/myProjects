@@ -2,7 +2,7 @@ package practice.itmathrepetitor.classes;
 
 import java.util.Arrays;
 
-public class Student {
+public class Student implements Comparable<Student> {
 
     private String name;
     private String surname;
@@ -64,6 +64,12 @@ public class Student {
                 ", surname='" + surname + '\'' +
                 ", numberOfGroup=" + numberOfGroup +
                 ", marks=" + Arrays.toString(marks) +
+                ", average=" + avg +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return String.valueOf(avg).compareTo(String.valueOf(o.avg));
     }
 }
