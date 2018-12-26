@@ -8,6 +8,7 @@ public class Student {
     private String surname;
     private int numberOfGroup;
     private int[] marks = new int[5];
+    private double avg;
 
     public Student(String name, String surname, int numberOfGroup, int[] marks) {
         this.name = name;
@@ -46,6 +47,14 @@ public class Student {
 
     public void setMarks(int[] marks) {
         this.marks = marks;
+    }
+
+    public double getAvg() {
+        return avg;
+    }
+
+    public void setAvg(double avg) {
+        this.avg = avg;
     }
 
     @Override
