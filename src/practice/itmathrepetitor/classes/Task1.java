@@ -2,6 +2,7 @@ package practice.itmathrepetitor.classes;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Task1 {
@@ -9,7 +10,34 @@ public class Task1 {
     public static void main(String[] args) {
         Student[] students = initStudent();
         List<Student> sortedStudents = sortStudents(students);
-//        printStudentsList();
+        System.out.println("All students:");
+        printStudentsList(sortedStudents);
+        System.out.println("\nStudents with good marks (all marks more than 3):");
+        printStudentsWithGoodMarks(sortedStudents);
+    }
+
+    private static void printStudentsWithGoodMarks(List<Student> list) {
+        Iterator<Student> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
+            int[] marks = student.getMarks();
+            boolean goodMarks = true;
+            for (int mark : marks) {
+                if (mark < 4) {
+                    goodMarks = false;
+                    break;
+                }
+            }
+            if (goodMarks)
+                System.out.println(student);
+        }
+    }
+
+    private static void printStudentsList(List<Student> list) {
+        Iterator<Student> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 
     private static List<Student> sortStudents(Student[] students) {
