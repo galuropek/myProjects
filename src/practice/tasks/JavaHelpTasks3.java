@@ -1,13 +1,12 @@
 package practice.tasks;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class JavaHelpTasks3 {
+
+    private static Scanner scanner;
 
     public static void main(String[] args) {
         //========================3.1.==============================
@@ -16,6 +15,14 @@ public class JavaHelpTasks3 {
         //========================3.2.==============================
         bigPrintNumber(2354091);
         //==========================================================
+        //========================3.3.==============================
+        initScanner();
+
+        //==========================================================
+    }
+
+    private static void initScanner() {
+        scanner = new Scanner(System.in);
     }
 
     private static List<Integer> integerToArray(int number) {
