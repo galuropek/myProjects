@@ -1,18 +1,20 @@
 package practice.itmathrepetitor.classes;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Task1 {
 
     public static void main(String[] args) {
         Student[] students = initStudent();
-        Student[] sortedStudents = sortStudents(students);
+        List<Student> sortedStudents = sortStudents(students);
+//        printStudentsList();
     }
 
-    private static Student[] sortStudents(Student[] students) {
-        Student[] sortedStudents = Arrays.copyOf(students, students.length);
-        for (int i = 0; i < sortedStudents.length; i++) {
-            Student student = sortedStudents[i];
+    private static List<Student> sortStudents(Student[] students) {
+        for (int i = 0; i < students.length; i++) {
+            Student student = students[i];
             int[] marks = student.getMarks();
             double avg = 0.0;
             for (int j = 0; j < marks.length; j++) {
@@ -20,7 +22,9 @@ public class Task1 {
             }
             student.setAvg(avg / marks.length);
         }
-        return students;
+        List<Student> sortedStudents = Arrays.asList(students);
+        Collections.sort(sortedStudents);
+        return sortedStudents;
     }
 
     private static Student[] initStudent() {
