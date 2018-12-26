@@ -16,9 +16,9 @@ public class JavaHelpTasks3 {
 //        bigPrintNumber(2354091);
         //==========================================================
         //========================3.3.==============================
-        initScanner();
-        String input = scanner.nextLine();
-        checkSymbols(input);
+//        initScanner();
+//        String input = scanner.nextLine();
+//        checkSymbols(input);
         //==========================================================
     }
 
