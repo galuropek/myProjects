@@ -13,11 +13,23 @@ public class JavaHelpTasks3 {
 //        System.out.println(integerToArray(523));
         //==========================================================
         //========================3.2.==============================
-        bigPrintNumber(2354091);
+//        bigPrintNumber(2354091);
         //==========================================================
         //========================3.3.==============================
         initScanner();
-
+        String input = scanner.nextLine();
+        Pattern charsCheck = Pattern.compile("[A-z]+");
+        Pattern numbersCheck = Pattern.compile("\\-?\\d+");
+        Pattern punctCheck = Pattern.compile("\\p{Punct}");
+        if (charsCheck.matcher(input.trim()).matches()) {
+            System.out.println(input + " - is a char(s).");
+        } else if (numbersCheck.matcher(input.trim()).matches()) {
+            System.out.println(input + " - is a number(s).");
+        } else if (punctCheck.matcher(input.trim()).matches()) {
+            System.out.println(input + " - is a punctuation character(s).");
+        } else {
+            System.out.println("Must to use more details pattern");
+        }
         //==========================================================
     }
 
