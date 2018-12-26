@@ -18,6 +18,11 @@ public class JavaHelpTasks3 {
         //========================3.3.==============================
         initScanner();
         String input = scanner.nextLine();
+        checkSymbols(input);
+        //==========================================================
+    }
+
+    private static void checkSymbols(String input) {
         Pattern charsCheck = Pattern.compile("[A-z]+");
         Pattern numbersCheck = Pattern.compile("\\-?\\d+");
         Pattern punctCheck = Pattern.compile("\\p{Punct}");
@@ -30,7 +35,6 @@ public class JavaHelpTasks3 {
         } else {
             System.out.println("Must to use more details pattern");
         }
-        //==========================================================
     }
 
     private static void initScanner() {
