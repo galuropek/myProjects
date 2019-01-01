@@ -36,4 +36,13 @@ public class Train implements Comparable<Train>{
     public int compareTo(Train o) {
         return String.valueOf(numberOfTrain).compareTo(String.valueOf(o.numberOfTrain));
     }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "nameStartStation='" + nameStartStation + '\'' +
+                ", numberOfTrain=" + numberOfTrain +
+                ", departureTime='" + departureTime + '\'' +
+                '}';
+    }
 }
