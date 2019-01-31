@@ -1,11 +1,13 @@
 package practice.bankomat;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ATM implements ActionListener {
 
+    //компоненты GUI
     //рамка
     private JFrame frame;
     //главная панель
@@ -23,6 +25,47 @@ public class ATM implements ActionListener {
         ATM atm = new ATM();
     }
 
+    public ATM() {
+
+        frame = new JFrame("ATM");
+
+        mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(3,2));
+
+        frame.getContentPane().add(mainPanel);
+
+        addComponents();
+    }
+
+    private void addComponents() {
+        jlblBalanceCaption = new JLabel("Balance: $");
+        jlblBalance = new JLabel(" ");
+        jlblMoneyCaption = new JLabel("Money: $");
+        jtxtMoney = new JTextField();
+        jbtnGetMoney = new JButton("Get money");
+        jbtnPutMoney = new JButton("Put money");
+
+        //выравнивание
+        jlblBalanceCaption.setHorizontalAlignment(JLabel.RIGHT);
+        jlblMoneyCaption.setHorizontalAlignment(JLabel.RIGHT);
+
+        //зеленый цвет на черном фоне
+        jlblBalance.setBackground(Color.black);
+        jlblBalance.setForeground(Color.GREEN);
+        jlblBalance.setOpaque(true);
+
+        //добавление компонентов на панель
+        mainPanel.add(jlblBalanceCaption);
+        mainPanel.add(jlblBalance);
+        mainPanel.add(jlblMoneyCaption);
+        mainPanel.add(jtxtMoney);
+        mainPanel.add(jbtnGetMoney);
+        mainPanel.add(jbtnPutMoney);
+
+        //слушатели событий
+        jbtnGetMoney.addActionListener(this);
+        jbtnPutMoney.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
