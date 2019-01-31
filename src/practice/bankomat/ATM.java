@@ -75,16 +75,27 @@ public class ATM implements ActionListener {
         jbtnPutMoney.addActionListener(this);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-        // return latter for this method
-    }
-
     private void displayBalance() {
 
         String balance = String.format("%.2f", account.getBalance());
         jlblBalance.setText(balance);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == jbtnGetMoney) {
+            getMoney();
+        } else if (e.getSource() == jbtnPutMoney) {
+            putMoney();
+        }
+    }
+
+    private void putMoney() {
+        //implements latter
+    }
+
+    private void getMoney() {
+        //implements latter
     }
 
 
