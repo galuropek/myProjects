@@ -19,7 +19,9 @@ public class ATM implements ActionListener {
 
     private Account account = new Account(100);
 
-
+    private static void setATM() {
+        ATM atm = new ATM();
+    }
 
 
     @Override
