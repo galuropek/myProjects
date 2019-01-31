@@ -30,11 +30,19 @@ public class ATM implements ActionListener {
         frame = new JFrame("ATM");
 
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(3,2));
+        mainPanel.setLayout(new GridLayout(3, 2));
 
         frame.getContentPane().add(mainPanel);
 
         addComponents();
+
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setSize(200, 150);
+        frame.setLocation(300, 300);
+        frame.setVisible(true);
+
+        displayBalance();
     }
 
     private void addComponents() {
@@ -50,7 +58,7 @@ public class ATM implements ActionListener {
         jlblMoneyCaption.setHorizontalAlignment(JLabel.RIGHT);
 
         //зеленый цвет на черном фоне
-        jlblBalance.setBackground(Color.black);
+        jlblBalance.setBackground(Color.BLACK);
         jlblBalance.setForeground(Color.GREEN);
         jlblBalance.setOpaque(true);
 
@@ -72,4 +80,12 @@ public class ATM implements ActionListener {
 
         // return latter for this method
     }
+
+    private void displayBalance() {
+
+        String balance = String.format("%.2f", account.getBalance());
+        jlblBalance.setText(balance);
+    }
+
+
 }
