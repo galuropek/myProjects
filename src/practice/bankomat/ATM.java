@@ -91,7 +91,14 @@ public class ATM implements ActionListener {
     }
 
     private void putMoney() {
-        //implements latter
+        if (isValidPutMoney()){
+            double money = Double.parseDouble(jtxtMoney.getText());
+            account.getMoney(money);
+            JOptionPane.showMessageDialog(frame, "Putting was a success", "Message", JOptionPane.INFORMATION_MESSAGE);
+
+            //пересчет баланса
+            displayBalance();
+        }
     }
 
     private void getMoney() {
