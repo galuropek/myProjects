@@ -98,13 +98,25 @@ public class ATM implements ActionListener {
         //implements latter
     }
 
-//    private boolean isValidPutMoney() {
-//
-//        String message = "";
-//        if (!isDouble(jtxtMoney.getText())){
-//
-//        }
-//    }
+    private boolean isValidPutMoney() {
+
+        String message = "";
+
+        if (!isDouble(jtxtMoney.getText())) {
+            message = "Enter number";
+        } else if (Double.parseDouble(jtxtMoney.getText()) < 100.0) {
+            message = "Min for putting: 100$";
+        } else if (Double.parseDouble(jtxtMoney.getText()) > 500.0) {
+            message = "Max for getting: 500$";
+        } else {
+            return true;
+        }
+
+        JOptionPane.showMessageDialog(frame, message, "Error", JOptionPane.WARNING_MESSAGE);
+        jtxtMoney.requestFocus();
+        jtxtMoney.selectAll();
+        return false;
+    }
 
     private boolean isDouble(String num) {
         try {
