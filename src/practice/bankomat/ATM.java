@@ -98,5 +98,22 @@ public class ATM implements ActionListener {
         //implements latter
     }
 
+//    private boolean isValidPutMoney() {
+//
+//        String message = "";
+//        if (!isDouble(jtxtMoney.getText())){
+//
+//        }
+//    }
+
+    private boolean isDouble(String num) {
+        try {
+            Double.parseDouble(num);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
 
 }
