@@ -91,9 +91,9 @@ public class ATM implements ActionListener {
     }
 
     private void putMoney() {
-        if (isValidPutMoney()){
+        if (isValidPutMoney()) {
             double money = Double.parseDouble(jtxtMoney.getText());
-            account.getMoney(money);
+            account.putMoney(money);
             JOptionPane.showMessageDialog(frame, "Putting was a success", "Message", JOptionPane.INFORMATION_MESSAGE);
 
             //пересчет баланса
@@ -102,27 +102,62 @@ public class ATM implements ActionListener {
     }
 
     private void getMoney() {
-        //implements latter
+        if (isValidGetMoney()){
+            double money = Double.parseDouble(jtxtMoney.getText());
+            account.getMoney(money);
+            JOptionPane.showMessageDialog(frame, "Getting was a success", "Message", JOptionPane.INFORMATION_MESSAGE);
+
+            //пересчет баланса
+            displayBalance();
+        }
+    }
+
+    private boolean isValidGetMoney() {
+
+        String message = "";
+
+        String inputLine = jtxtMoney.getText();
+
+        if (!isDouble(inputLine)) {
+            message = "Enter number";
+        } else if (Double.parseDouble(inputLine) < 10) {
+            message = "Min for getting: 10$";
+        } else if (Double.parseDouble(inputLine) > 250) {
+            message = "Max for getting: 250$";
+        } else if (account.getBalance() - Double.parseDouble(inputLine) < 0){
+            message = "Insufficient funds";
+        } else {
+            return true;
+        }
+
+        errorMessage(message);
+        return false;
     }
 
     private boolean isValidPutMoney() {
 
         String message = "";
 
-        if (!isDouble(jtxtMoney.getText())) {
+        String inputLine = jtxtMoney.getText();
+
+        if (!isDouble(inputLine)) {
             message = "Enter number";
-        } else if (Double.parseDouble(jtxtMoney.getText()) < 100.0) {
+        } else if (Double.parseDouble(inputLine) < 100.0) {
             message = "Min for putting: 100$";
-        } else if (Double.parseDouble(jtxtMoney.getText()) > 500.0) {
+        } else if (Double.parseDouble(inputLine) > 500.0) {
             message = "Max for getting: 500$";
         } else {
             return true;
         }
 
+        errorMessage(message);
+        return false;
+    }
+
+    private void errorMessage(String message) {
         JOptionPane.showMessageDialog(frame, message, "Error", JOptionPane.WARNING_MESSAGE);
         jtxtMoney.requestFocus();
         jtxtMoney.selectAll();
-        return false;
     }
 
     private boolean isDouble(String num) {
