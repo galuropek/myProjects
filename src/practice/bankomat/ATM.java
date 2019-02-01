@@ -21,7 +21,7 @@ public class ATM implements ActionListener {
 
     private Account account = new Account(100);
 
-    private static void setATM() {
+    public static void runATM() {
         ATM atm = new ATM();
     }
 
@@ -38,7 +38,7 @@ public class ATM implements ActionListener {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setSize(200, 150);
+        frame.setSize(250, 150);
         frame.setLocation(300, 300);
         frame.setVisible(true);
 
