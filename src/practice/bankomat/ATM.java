@@ -12,8 +12,7 @@ public class ATM implements ActionListener {
     private JFrame frame;
     //главная панель
     private JPanel mainPanel;
-    //заголовки
-    private JLabel jlblBalanceCaption, jlblBalance, jlblMoneyCaption;
+    private JLabel jlblBalance;
     //текстовые поля
     private JTextField jtxtMoney;
     //кнопка
@@ -46,9 +45,10 @@ public class ATM implements ActionListener {
     }
 
     private void addComponents() {
-        jlblBalanceCaption = new JLabel("Balance: $");
+        //заголовки
+        JLabel jlblBalanceCaption = new JLabel("Balance: $");
         jlblBalance = new JLabel(" ");
-        jlblMoneyCaption = new JLabel("Money: $");
+        JLabel jlblMoneyCaption = new JLabel("Money: $");
         jtxtMoney = new JTextField();
         jbtnGetMoney = new JButton("Get money");
         jbtnPutMoney = new JButton("Put money");
