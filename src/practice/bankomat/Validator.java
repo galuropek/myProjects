@@ -6,7 +6,7 @@ class Validator {
 
     static boolean isValidGetMoney(JTextField jtxtMoney, Account account, JFrame frame) {
 
-        String message = "";
+        String message;
 
         String inputLine = jtxtMoney.getText();
 
@@ -28,7 +28,7 @@ class Validator {
 
     static boolean isValidPutMoney(JTextField jtxtMoney, JFrame frame) {
 
-        String message = "";
+        String message;
 
         String inputLine = jtxtMoney.getText();
 
