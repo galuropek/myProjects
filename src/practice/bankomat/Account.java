@@ -1,22 +1,22 @@
 package practice.bankomat;
 
-public class Account {
+class Account {
 
     private double balance;
 
-    public Account(double balance) {
+    Account(double balance) {
         this.balance = balance;
     }
 
-    public double getBalance() {
+    double getBalance() {
         return balance;
     }
 
-    public void putMoney(double money) {
+    void putMoney(double money) {
         balance += money;
     }
 
-    public void getMoney(double money) {
+    void getMoney(double money) {
         balance -= money;
     }
 }
